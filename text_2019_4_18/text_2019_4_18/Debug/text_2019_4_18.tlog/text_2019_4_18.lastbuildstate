@@ -1,2 +1,6 @@
 #TargetFrameworkVersion=v4.0:PlatformToolSet=v141:EnableManagedIncrementalBuild=false:VCToolArchitecture=Native32Bit:WindowsTargetPlatformVersion=10.0.17763.0
+<<<<<<< HEAD
 Debug|Win32|I:\bit学习\study-experience\text_2019_4_18\|
+=======
+Debug|Win32|I:\bit学习\text_2019_4_18\|
+>>>>>>> ee8cfd3d3d1a408e42eba2d6cdaed25b53a9e7ca
