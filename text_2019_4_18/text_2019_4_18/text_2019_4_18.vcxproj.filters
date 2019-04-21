@@ -15,6 +15,15 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
+=======
+    <ClCompile Include="Leap year judgement.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="100-200 prime number.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+>>>>>>> ee8cfd3d3d1a408e42eba2d6cdaed25b53a9e7ca
     <ClCompile Include="Multiplication Tables.c">
       <Filter>源文件</Filter>
     </ClCompile>
