@@ -19,9 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\Common divisor.c" />
-    <ClCompile Include="..\FindMax.c" />
-    <ClCompile Include="..\three number sort.c" />
+    <ClCompile Include="Common divisor.c" />
+    <ClCompile Include="FindMax.c" />
+    <ClCompile Include="three number sort.c" />
     <ClCompile Include="Value exchange.c" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

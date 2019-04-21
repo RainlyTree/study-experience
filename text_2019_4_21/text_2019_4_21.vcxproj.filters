@@ -15,16 +15,16 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\Common divisor.c">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="Value exchange.c">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="..\FindMax.c">
+    <ClCompile Include="Common divisor.c">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="..\three number sort.c">
+    <ClCompile Include="FindMax.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="three number sort.c">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
