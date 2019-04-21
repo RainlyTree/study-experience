@@ -5,7 +5,7 @@ int main()
 	int year;
 	for (year = 1000; year <= 2000; year++)
 	{
-		if (year % 400 == 0)
+		if (year % 400 == 0)                   //陷阱：：：若先判断 %4 会无法进入 %400
 			printf("%d ", year);
 		else if (year % 4 == 0 && year % 100 != 0)
 			printf("%d ", year);
