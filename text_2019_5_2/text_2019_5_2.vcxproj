@@ -115,10 +115,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <ClCompile Include="A-a.c" />
     <ClCompile Include="binary search.c" />
     <ClCompile Include="find number.c" />
     <ClCompile Include="input_password.c" />
+=======
+    <ClCompile Include="..\A-a.c" />
+    <ClCompile Include="..\binary search.c" />
+    <ClCompile Include="..\find number.c" />
+    <ClCompile Include="..\input_password.c" />
+>>>>>>> 634ba00e030601e4cec9467f3e449aa7e4dc8391
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
