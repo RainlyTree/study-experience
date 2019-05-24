@@ -15,17 +15,16 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="one_binary_number.c">
+    <ClCompile Include="mine_clearance扫雷.c">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="int_every_digit.c">
+    <ClCompile Include="text.c">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="different_digit.c">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="binary_even_odd_digits.c">
-      <Filter>源文件</Filter>
-    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="mine_clearance扫雷.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
