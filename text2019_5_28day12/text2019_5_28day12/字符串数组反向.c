@@ -30,6 +30,7 @@ void my_Reversal(char *start,char *end)		//完全反转
 
 void quire_Rve(char arr[])
 {
+	assert(arr);
 	my_Reversal(arr,arr + my_len(arr) - 1);
 	while (*arr)
 	{
