@@ -30,32 +30,46 @@ void left_move(char *str, int k)
 	}
 }
 
-int is_left_move(char *arr, const char *p)
+//int is_left_move(char *arr, const char *p)
+//{
+//	assert(arr != NULL);
+//	assert(p != NULL);
+//	int number = strlen(arr);
+//	int count = 0;
+//	while (number != 0)
+//	{
+//		if (! strcmp(arr, p))
+//		{
+//			break;
+//		}
+//		left_move(p, 1);
+//		count++;
+//		number--;
+//	}
+//	if (!strcmp(arr, p))
+//		return count;
+//	else
+//		return 0;
+//}
+
+int is_left_move(char *arr, const char *p)    //对原数组有大小要求 需要对原数组进行复制
 {
 	assert(arr != NULL);
 	assert(p != NULL);
-	int number = strlen(arr);
-	int count = 0;
-	while (number != 0)
-	{
-		if (! strcmp(arr, p))
-		{
-			break;
-		}
-		left_move(p, 1);
-		count++;
-		number--;
-	}
-	if (!strcmp(arr, p))
-		return count;
+	if (strlen(arr) != strlen(p))
+		return 0;
+	strncat(arr, arr, strlen(arr));
+	if (strstr(arr, p) != NULL)
+		return 1;
 	else
 		return 0;
+
 }
 
 int main()
 {
-	char str[] = "ABCDA";
-	char *str1 = "ABCDD";
+	char str[20] = "ABCDA";
+	char *str1 = "ABCD";
 	printf("%d", is_left_move(str1, str));
 	system("pause");
 	return 0;
