@@ -121,6 +121,9 @@
     <ClCompile Include="MyStrcmp.c" />
     <ClCompile Include="MyStrcpy.c" />
     <ClCompile Include="Mymemmove.c" />
+    <ClCompile Include="MyStrncat.c" />
+    <ClCompile Include="MyStrncmp.c" />
+    <ClCompile Include="MyStrncpy.c" />
     <ClCompile Include="MyStrstr.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
