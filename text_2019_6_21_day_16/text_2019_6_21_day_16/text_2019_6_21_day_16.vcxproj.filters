@@ -36,5 +36,14 @@
     <ClCompile Include="MyMemcpy.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="MyStrncmp.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="MyStrncat.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="MyStrncpy.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

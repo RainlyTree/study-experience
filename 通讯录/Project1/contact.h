@@ -10,7 +10,8 @@ enum Option
 	del,
 	show,
 	clear,
-	sort
+	sort,
+	change
 };
 
 
@@ -36,6 +37,8 @@ typedef struct Contact
 {
 	PersonInfo per[MAX_NUMPERSON];
 	int usedSize;//被使用的个数
+	int capticty;//容量
+
 }Contact;
 
 void InitContact(Contact *pCon);
@@ -49,4 +52,9 @@ void DelContact(Contact *pCon);
 void ShowContact(Contact *pCon);
 
 void ClearContact(Contact *pCon);
+
+void SortContact(Contact *pCon);
+
+void ChangeContact(Contact *pCon);
+
 #endif

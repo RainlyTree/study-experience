@@ -7,8 +7,50 @@
 void InitContact(Contact *pCon)
 {
 	assert(pCon != NULL);
+
 	memset(pCon->per, 0, sizeof(pCon->per));
 	pCon->usedSize = 0;
+
+}
+
+void ChangeContact(Contact *pCon)
+{
+	assert(pCon != NULL);
+
+	int n;
+	printf("input the number:");
+	scanf("%d", &n);
+	n = n - 1;
+	printf("name :");
+	scanf("%s", pCon->per[n].name);
+	printf("age  :");
+	scanf("%d", &(pCon->per[n].age));
+	printf("tele :");
+	scanf("%s", pCon->per[n].tele);
+	printf("addr :");
+	scanf("%s", pCon->per[n].addr);
+	printf("sex  :");
+	scanf("%s", pCon->per[n].sex);
+	printf("修改成功\n");
+}
+
+
+void SortContact(Contact *pCon)
+{
+	assert(pCon != NULL);
+	PersonInfo tmp;
+	for (int i = 0; i < pCon->usedSize - 1; i++)
+	{
+		for (int j = 0; j < pCon->usedSize - 1 - i; j++)
+		{
+			if (strcmp(pCon->per[j].name, pCon->per[j + 1].name))
+			{
+				tmp = pCon->per[j];
+				pCon->per[j] = pCon->per[j + 1];
+				pCon->per[j + 1] = tmp;
+			}
+		}
+	}
 }
 
 void AddContact(Contact *pCon)
@@ -16,6 +58,7 @@ void AddContact(Contact *pCon)
 	//1 往哪里放 数组 下标
 	//2 性别 年龄。。。。
 	assert(pCon != NULL);
+
 	if (pCon->usedSize == MAX_NUMPERSON)
 	{
 		printf("通讯录满了");
@@ -84,7 +127,7 @@ void ShowContact(Contact *pCon)
 	}
 }
 
-void ClearContact(Contact *pCon)
+void ClearContact(Contact *pCon)		//清空内容
 {
 	InitContact(pCon);
 }

@@ -3,14 +3,14 @@
 #include<string.h>
 #include<stdlib.h>
 #include"contact.h"
-
+#include<vld.h>
 
 void menu()
 {
 	printf("********1. ADD*******2.search*******\n");
 	printf("********3. del*******4.show  *******\n");
 	printf("********5. clear*****6.sort  *******\n");
-	printf("*************0. exit****************\n");
+	printf("********7.change*****0. exit********\n");
 }
 
 void start()
@@ -40,6 +40,13 @@ void start()
 			break;
 		case clear:
 			ClearContact(&con);
+			break;
+		case sort:
+			SortContact(&con);
+			break;
+		case change:
+			ChangeContact(&con);
+		case EXIT:
 			break;
 		default:
 			printf(" ‰»Î”–ŒÛ£°");
