@@ -52,6 +52,6 @@ int main()
 	else
 		printf("not find\n");
 	printf("%d ,%d", row, col);
-	system("pause");
+	//system("pause");
 	return 0;
 }

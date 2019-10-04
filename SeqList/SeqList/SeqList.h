@@ -18,13 +18,13 @@ void SeqListInit(SeqList* ps, size_t capacity);
 void SeqListDestory(SeqList *ps);
 //ºÏ≤È»›¡ø
 void CheckCapacity(SeqList* ps);
-//Õ∑…æ
+//Œ≤≤Â
 void SeqListPushBack(SeqList* ps, DataType x);
 //Œ≤…æ
 void SeqListPopBack(SeqList *ps);
 //Õ∑≤Â
 void SeqListPushFront(SeqList *ps, DataType x);
-//Œ≤≤Â
+//Õ∑…æ
 void SeqListPopFront(SeqList *ps);
 //—∞’“Œª÷√
 int SeqListFind(SeqList* ps, DataType x);

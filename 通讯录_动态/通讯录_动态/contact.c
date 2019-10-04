@@ -188,6 +188,7 @@ void Contact_ReadInfo(Contact *pCon)			//将文件中内容导入系统
 		ADD(pCon,&tmp);
 	}
 	fclose(fp);
+	fp = NULL;
 }
 
 void Contact_WriteInfo(Contact *pCon)				//将系统内容写入文件
@@ -203,4 +204,5 @@ void Contact_WriteInfo(Contact *pCon)				//将系统内容写入文件
 		fwrite(pCon->per + i, sizeof(PersonInfo), 1, fp);
 	}
 	fclose(fp);
+	fp = NULL;
 }
