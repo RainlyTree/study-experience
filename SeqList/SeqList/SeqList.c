@@ -115,12 +115,12 @@ void SeqListErase(SeqList *ps, size_t pos)
 	assert(ps->arr);
 	if (pos < ps->size)
 	{
-		SeqListRemove(ps, pos);
+		SeqListMove(ps, pos);
 	}
 }
 
 //ÏòÇ°ÒÆ¶¯
-void SeqListRemove(SeqList* ps, DataType x)
+void SeqListMove(SeqList* ps, DataType x)
 {
 	assert(ps->arr);
 	while (x < (ps->size - 1))

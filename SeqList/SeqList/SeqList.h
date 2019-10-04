@@ -33,7 +33,7 @@ void SeqListInsert(SeqList* ps, size_t pos, DataType x);
 //删除元素
 void SeqListErase(SeqList *ps, size_t pos);
 //向前移动
-void SeqListRemove(SeqList* ps, DataType x);
+void SeqListMove(SeqList* ps, DataType x);
 //修改当前位置的值
 void SeqListModify(SeqList* ps, size_t pos, DataType x);
 //打印
