@@ -106,23 +106,31 @@ void SListEraseAfter(SListNode* pos)
 void SListRemove(SList* plist, SLTDataType x)
 {
 	assert(plist);
-	if (plist->_head->_next == NULL || x == 0)
+	if (plist->_head->_next == NULL)
 		return;
 	SListNode* front = plist->_head;
-	SListNode* next = plist->_head->_next;
-	while (x > 1 && next != NULL)
+	while (front->_next != NULL)
 	{
-		front = front->_next;
-		next = next->_next;
-		--x;
+		SListNode *fee = front->_next;
+		if (fee->_data == x)
+		{
+			if (fee->_next == NULL)
+			{
+				front->_next = NULL;
+				free(fee);
+			}
+			else
+			{
+				fee->_data = fee->_next->_data;
+				fee->_next = fee->_next->_next;
+				free(fee->_next);
+			}
+		}
+		else
+		{
+			front = front->_next;
+		}
 	}
-	if (x > 1)
-		return;
-	else
-	{
-		front->_next = next->_next;
-	}
-	free(next);
 }
 
 void SListPrint(SList* plist)
@@ -154,13 +162,8 @@ void TestSList()
 	SListInsertAfter((&text)->_head, 0);
 	SListPrint(&text);
 
-	SListRemove(&text, 0);
-	SListPrint(&text);
-
-	SListRemove(&text, 1);
-	SListPrint(&text);
-
 	SListRemove(&text, 2);
+	SListRemove(&text, 1);
 	SListPrint(&text);
 
 	SListNode* new = SListFind(&text, 2);
