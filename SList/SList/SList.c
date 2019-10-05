@@ -8,6 +8,7 @@
 //½¨Á¢
 void SListInit(SList* plist)
 {
+	assert(plist);
 	plist->_head = (SListNode*)malloc(sizeof(SListNode));
 	plist->_head->_next	= NULL;
 	plist->_head->_data = -1;
