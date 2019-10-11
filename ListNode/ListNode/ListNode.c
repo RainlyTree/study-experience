@@ -9,7 +9,12 @@
 void ListInit(List* plist)
 {
 	assert(plist);
+<<<<<<< HEAD
 	plist->_head = BuildNewNode(0);
+=======
+	plist->_head = (ListNode*)malloc(sizeof(ListNode));
+	plist->_head->_data = -1;
+>>>>>>> 1ffd60aeb7e12a65cb7a2920ac0d50d052f124e7
 	plist->_head->_next = plist->_head;
 	plist->_head->_prev = plist->_head;
 }
@@ -18,7 +23,12 @@ ListNode* BuildNewNode(LTDataType x)
 {
 	ListNode* New = (ListNode*)malloc(sizeof(ListNode));
 	New->_data = x;
+<<<<<<< HEAD
 	New->_next = New->_prev = NULL;
+=======
+	New->_next = New;
+	New->_prev = New;
+>>>>>>> 1ffd60aeb7e12a65cb7a2920ac0d50d052f124e7
 	return New;
 }
 
@@ -29,6 +39,7 @@ void ListDestory(List* plist)
 	if (plist->_head == plist->_head->_next)
 		return;
 	ListNode* fee = plist->_head->_next;
+<<<<<<< HEAD
 	while (fee != plist->_head)
 	{
 		ListNode* next = fee->_next;
@@ -95,6 +106,18 @@ void ListPopFront(List* plist)
 	free(del);
 	del = NULL;
 }
+=======
+	ListNode* next = fee->_next;
+	while (fee != plist->_head)
+	{
+		free(fee);
+		fee = next;
+		next = next->_next;
+	}
+	plist->_head->_next  = plist->_head;
+}
+
+>>>>>>> 1ffd60aeb7e12a65cb7a2920ac0d50d052f124e7
 
 // 在pos的前面进行插入
 void ListInsert(ListNode* pos, LTDataType x)
@@ -103,7 +126,11 @@ void ListInsert(ListNode* pos, LTDataType x)
 	ListNode* new = BuildNewNode(x);
 	ListNode* front = pos->_prev;
 	new->_next = pos;
+<<<<<<< HEAD
 	new->_prev = front;
+=======
+	new->_prev = pos->_prev;
+>>>>>>> 1ffd60aeb7e12a65cb7a2920ac0d50d052f124e7
 	front->_next = new;
 	pos->_prev = new;
 }
@@ -111,16 +138,24 @@ void ListInsert(ListNode* pos, LTDataType x)
 // 删除pos位置的节点
 void ListErase(ListNode* pos)
 {
+<<<<<<< HEAD
 	assert(pos);
 	if (pos->_next == pos)
 		return;
 
+=======
+	if (pos->_next == pos)
+		return;
+>>>>>>> 1ffd60aeb7e12a65cb7a2920ac0d50d052f124e7
 	ListNode* front = pos->_prev;
 	ListNode* next = pos->_next;
 	front->_next = next;
 	next->_prev = front;
 	free(pos);
+<<<<<<< HEAD
 	pos = NULL;
+=======
+>>>>>>> 1ffd60aeb7e12a65cb7a2920ac0d50d052f124e7
 }
 
 //删除值为x的节点
@@ -148,11 +183,16 @@ void ListRemove(List* plist, LTDataType x)
 
 void ListPrint(List* plist)
 {
+<<<<<<< HEAD
 	assert(plist);
 	ListNode* eve = plist->_head->_next;
 	//防止plist->_head之后没有元素
 	if (plist->_head == plist->_head->_next)
 		return NULL;
+=======
+	assert(plist->_head);
+	ListNode* eve = plist->_head->_next;
+>>>>>>> 1ffd60aeb7e12a65cb7a2920ac0d50d052f124e7
 	while (eve != plist->_head)
 	{
 		printf("%d ", eve->_data);
