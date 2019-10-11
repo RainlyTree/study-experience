@@ -19,14 +19,12 @@ void ListInit(List* plist);
 //销毁
 void ListDestory(List* plist);
 
-<<<<<<< HEAD
+
 void ListPushBack(List* plist, LTDataType x);
 void ListPushFront(List* plist, LTDataType x);
 void ListPopBack(List* plist);
 void ListPopFront(List* plist);
 
-=======
->>>>>>> 1ffd60aeb7e12a65cb7a2920ac0d50d052f124e7
 // 在pos的前面进行插入
 void ListInsert(ListNode* pos, LTDataType x); 
 
