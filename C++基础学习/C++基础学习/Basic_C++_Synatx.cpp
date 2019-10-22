@@ -6,8 +6,8 @@ void textDate()
 	d.SetDate(2019, 10, 22);
 	d.Display();
 
-	Date d2;
-	d2.SetDate(2019, 10, 23);
+	Date d2(2019, 10, 23);
+	//d2.SetDate(2019, 10, 23);
 	d2.Display();
 }
 

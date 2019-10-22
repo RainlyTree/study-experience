@@ -14,6 +14,17 @@ public:
 	
 	//µ×²ã £ºvoid SetDate(Date* const this ,int year, int month, int day)
 
+	//¹¹Ôìº¯Êı
+	Date(int year, int month, int day)
+	{
+		_year = year;
+		_month = month;
+		_day = day;
+	}
+
+
+
+
 	void SetDate(int year, int month, int day)
 	{
 		_year = year;
