@@ -185,10 +185,10 @@ void text()
 	SeqListErase(&text, 0);
 	SeqListPrint(&text);
 }
-
-int main()
-{
-	text();
-	system("pause");
-	return 0;
-}
+//
+//int main()
+//{
+//	text();
+//	system("pause");
+//	return 0;
+//}
