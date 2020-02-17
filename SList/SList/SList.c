@@ -5,6 +5,19 @@
 #include<assert.h>
 #include"SList.h"
 
+//typedef struct SListNode
+//{
+//	SLTDataType _data;
+//	struct SListNode* _next;
+//}SListNode;
+//
+//typedef struct SList
+//{
+//	SListNode* _head;
+//}SList;
+
+
+
 //建立
 void SListInit(SList* plist)
 {
@@ -15,7 +28,18 @@ void SListInit(SList* plist)
 }
 
 //销毁
-void SListDestory(SList* plist);
+void SListDestory(SList* plist)
+{
+	assert(plist->_head);
+	while (plist->_head != NULL)
+	{
+		SListNode* tmp = plist->_head;
+		plist->_head = plist->_head->_next;
+		free(tmp);
+	}
+	plist->_head = NULL;
+	plist = NULL;
+}
 
 //新增一个节点
 SListNode* BuySListNode(SLTDataType x)
@@ -162,13 +186,13 @@ void TestSList()
 	//SListPopFront(&text);
 	SListInsertAfter((&text)->_head, 0);
 	SListPrint(&text);
+	SListDestory(&text);
+	//SListRemove(&text, 2);
+	//SListRemove(&text, 1);
+	//SListPrint(&text);
 
-	SListRemove(&text, 2);
-	SListRemove(&text, 1);
-	SListPrint(&text);
-
-	SListNode* new = SListFind(&text, 2);
-	printf("%d", new->_data);
+	//SListNode* new = SListFind(&text, 2);
+	//printf("%d\n", new->_data);
 	//SListEraseAfter((&text)->_head);
 }
 
