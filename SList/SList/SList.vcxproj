@@ -116,7 +116,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="SList.h" />
-    <ClInclude Include="SList1.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SList.c" />

@@ -169,36 +169,3 @@ void SListPrint(SList* plist)
 	}
 	printf("\n");
 }
-void TestSList()
- {
-	SList text;
-	SListInit(&text);
-	SListPushFront(&text, 1);
-	SListPushFront(&text, 2);
-	SListPushFront(&text, 3);
-	SListPushFront(&text, 4);
-	SListInsertAfter((&text)->_head, 0);
-	SListPrint(&text);
-	//SListPopFront(&text);
-	//SListPopFront(&text);
-	//SListPopFront(&text);
-	//SListPopFront(&text);
-	//SListPopFront(&text);
-	SListInsertAfter((&text)->_head, 0);
-	SListPrint(&text);
-	SListDestory(&text);
-	//SListRemove(&text, 2);
-	//SListRemove(&text, 1);
-	//SListPrint(&text);
-
-	//SListNode* new = SListFind(&text, 2);
-	//printf("%d\n", new->_data);
-	//SListEraseAfter((&text)->_head);
-}
-
-int main()
-{
-	TestSList();
-	system("pause");
-	return 0;
-}
