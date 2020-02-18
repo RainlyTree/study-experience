@@ -9,9 +9,9 @@
 void ListInit(List* plist)
 {
 	assert(plist);
-	plist->_head = BuildNewNode(0);
+	//plist->_head = BuildNewNode(0);
 	plist->_head = (ListNode*)malloc(sizeof(ListNode));
-
+	plist->_head->_data = 0;
 	plist->_head->_next = plist->_head;
 	plist->_head->_prev = plist->_head;
 }
