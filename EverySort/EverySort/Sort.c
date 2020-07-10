@@ -31,30 +31,14 @@ void MyInsertSort(int* arr, int n)
 }
 
 
-//时间复杂度O(n^1.3 到 ^2)
-//空间复杂度O(1)
-//稳定性：不稳定
-//shellSort 希尔排序
-void ShllSort(int* arr, int n)
+
+
+void Swap(int *a, int *b)
 {
-	//表示间隔
-	int gap = n;
-	int i;
-	while (gap > 1)
-	{
-		gap = gap / 3 + 1;		//保证不进入死循环
-		for (i = 0; i < n - gap; ++i)
-		{
-			int end = i;
-			int tmp = arr[end + gap];
-			while (end >= 0 && arr[end] > tmp)
-			{
-				arr[end + gap] = arr[end];
-				end -= gap;
-			}
-			arr[end + gap] = tmp;
-		}
-	}
+	int tmp;
+	tmp = *a;
+	*a = *b;
+	*b = tmp;
 }
 
 //时间复杂度：O(n²)
@@ -119,6 +103,8 @@ void HeapSort(int* a, int n)
 	}
 }
 
+
+
 //时间复杂度:O(n² ~ n)
 //空间复杂度:O(1)
 void BubbleSort(int* a, int n)
@@ -139,14 +125,6 @@ void BubbleSort(int* a, int n)
 	}
 }
 
-void Swap(int *a, int *b)
-{
-	int tmp;
-	tmp = *a;
-	*a = *b;
-	*b = tmp;
-}
-
 
 void printarr(int* arr, int n)
 {
@@ -156,12 +134,115 @@ void printarr(int* arr, int n)
 		printf("%d ", arr[i]);
 	}
 }
+
+
+void merge(int* arr, int left1, int right1, int left2, int right2, int* tmp)
+{
+	int len = right2 - left1 + 1;
+	int left = left1;
+	int start = left1;
+	while (left1 <= right1 && left2 <= right2)
+	{
+		if (arr[left1] < arr[left2])
+		{
+			tmp[left] = arr[left1];
+			++left1;
+		}
+		else
+		{
+			tmp[left] = arr[left2];
+			++left2;
+		}
+		++left;
+	}
+	while (left1 <= right1)
+	{
+		tmp[left] = arr[left1];
+		++left1;
+		++left;
+	}
+	while (left2 <= right2)
+	{
+		tmp[left] = arr[left2];
+		++left2;
+		++left;
+	}
+	for (int i = start; i <= right2; ++i)
+	{
+		arr[i] = tmp[i];
+	}
+ }
+
+
+
+void mergeSort(int* arr, int left, int right,int* tmp)
+{
+	if (left < right)
+	{
+		int mid = (right - left) / 2 + left;
+		mergeSort(arr, left, mid, tmp);
+		mergeSort(arr, mid + 1, right, tmp);
+		merge(arr, left, mid, mid + 1, right, tmp);
+	}
+}
+
+void SR(int* arr, int n)
+{
+	int len = n;
+	while (len > 1)
+	{
+		len = len / 3 + 1;
+		for (int i = 0; i < n - len; ++i)
+		{
+			int end = i;
+			int tmp = arr[end + len];
+			while (end >= 0 && arr[end] > tmp)
+			{
+				arr[len + end] = arr[end];
+				end -= len;
+			}
+			arr[len + end] = tmp;
+		}
+	}
+}
+
+//时间复杂度O(n^1.3 到 ^2)
+//空间复杂度O(1)
+//稳定性：不稳定
+//shellSort 希尔排序
+void ShllSort(int* arr, int n)
+{
+	//表示间隔
+	int gap = n;
+	int i;
+	while (gap > 1)
+	{
+		gap = gap / 3 + 1;		//保证不进入死循环
+		for (i = 0; i < n - gap; ++i)
+		{
+			int end = i;
+			int tmp = arr[end + gap];
+			while (end >= 0 && arr[end] > tmp)
+			{
+				arr[end + gap] = arr[end];
+				end -= gap;
+			}
+			arr[end + gap] = tmp;
+		}
+	}
+}
+
+
 void text()
 {
+	int* arr = (int*)malloc(sizeof(int) * 10);
 	int a[10] = { 1, 10, 8, 9, 3, 7 ,4 ,13, 4, 2 };
-	MyInsertSort(a, 10);
+	SR(a, 10);
+	mergeSort(a, 0, 9, arr);
 	printarr(a, 10);
+	free(arr);
 }
+
 
 int main()
 {
