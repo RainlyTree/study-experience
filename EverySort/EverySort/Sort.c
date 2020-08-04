@@ -237,6 +237,7 @@ void text()
 {
 	int* arr = (int*)malloc(sizeof(int) * 10);
 	int a[10] = { 1, 10, 8, 9, 3, 7 ,4 ,13, 4, 2 };
+	HeapSort(a, 10);
 	SR(a, 10);
 	mergeSort(a, 0, 9, arr);
 	printarr(a, 10);
